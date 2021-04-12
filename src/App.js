@@ -11,9 +11,6 @@ class App extends React.Component {
   }
 
     onSubmit = async (term) => {
-      console.log(youtube);
-      console.log(process.env.YOUTUBE_API_KEY);
-
       const res = await youtube.get('/search', {
         params: {
           q: term,
@@ -23,7 +20,6 @@ class App extends React.Component {
     }
 
     onVideoSelect = (video) => {
-      console.log('from app!', video);
       this.setState({ selectedVideo: video });
       const { selectedVideo } = this.state;
       if (selectedVideo) {
@@ -36,8 +32,17 @@ class App extends React.Component {
       return (
         <div className="ui container">
           <SearchBar onSubmit={this.onSubmit} />
-          <VideoDetail video={selectedVideo} />
-          <VideoList videos={videos} onVideoSelect={this.onVideoSelect} />
+          <div className="ui grid">
+            <div className="ui row">
+              <div className="eleven wide column">
+                <VideoDetail video={selectedVideo} />
+
+              </div>
+              <div className="five wide column">
+                <VideoList videos={videos} onVideoSelect={this.onVideoSelect} />
+              </div>
+            </div>
+          </div>
         </div>
       );
     }

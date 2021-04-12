@@ -8,7 +8,7 @@ const VideoDetail = ({ video }) => {
   return (
     <div>
       <div className="ui embed">
-        <iframe src={videoSrc} title="Youtube Embed" frameBorder="0" />
+        <iframe src={videoSrc} title="video player" frameBorder="0" />
       </div>
       <div className="ui segment">
         <h4 className="ui header">{video.snippet.title}</h4>

@@ -3,7 +3,11 @@ import './VideoItem.css';
 
 const VideoItem = ({ videoData, onVideoSelect }) => (
   <div onClick={() => onVideoSelect(videoData)} role="menuitem" className="video-item item">
-    <img src={videoData.snippet.thumbnails.medium.url} alt="" className="ui image" />
+    <img
+      src={videoData.snippet.thumbnails.medium.url}
+      alt={videoData.snippet.title}
+      className="ui image"
+    />
     <div className="content">
       <div className="header">
         {videoData.snippet.title}
