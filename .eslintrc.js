@@ -30,5 +30,8 @@ module.exports = {
     'no-console': 'off',
     'react/prop-types': 'off',
     'react/jsx-one-expression-per-line': [0, { allow: 'literal' }],
+    'jsx-a11y/interactive-supports-focus': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+
   },
 };
